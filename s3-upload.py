@@ -1,7 +1,6 @@
 #!/usr/bin/env python3.6
 import boto3
 import os
-import glob
 import sys
 
 os.chdir('/home/vladislav/s3-upload')
@@ -15,5 +14,3 @@ s3 = boto3.client('s3')
 for dirpath, dirs, files in os.walk('/home/vladislav/s3-upload/'):
   for fname in files:
     s3.upload_file(dirpath+ '/' + fname, bucketName, fname)
-
-
