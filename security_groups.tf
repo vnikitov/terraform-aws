@@ -39,7 +39,7 @@ resource "aws_security_group" "allow_ssh_jumpbox" {
   ingress {
     from_port   = 22
     to_port     = 22
-    protocol    = "ssh"
+    protocol    = "tcp"
     cidr_blocks = ["95.158.129.162/32"]
   }
 
