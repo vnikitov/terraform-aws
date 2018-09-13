@@ -15,35 +15,39 @@ variable "instance_type" {
 # VPC
 variable "vpc_01" {
   description = "VPC ID"
-  default     = "vpc-0a2e4560b1de77cb8"
+  default     = "vpc-0428ccc1eca7dc86b"
 }
 
 variable "private_subnet_1a" {
-  default = "subnet-0cb991202c92c9204"
+  default = "subnet-057222ef5688f5eab"
 }
 
 variable "private_subnet_1b" {
-  default = "subnet-00603a544b32db10e"
+  default = "subnet-0d864dc76cd6b75db"
 }
 
 variable "public_subnet_1a" {
-  default = "subnet-05f385a09faddb75e"
+  default = "subnet-007bab726f78b3ad1"
 }
 
 # Security Groups
 
 variable "allow_ssh_jumpbox" {
-  default = "sg-09a08602328208d5a"
+  default = "sg-0e18f7893d9414098"
 }
 
 variable "allow_icmp" {
-  default = "sg-08515df4bb59b5e90"
+  default = "sg-021718f621e5fafa3"
 }
 
 variable "allow_ssh" {
-  default = "sg-06c399a218cba5a73"
+  default = "sg-08a814004997ee0b1"
 }
 
 variable "allow_all_egress" {
-  default = "sg-0eccee5a1fd1f1275"
+  default = "sg-0827a456bbaa33f76"
+}
+
+variable "key_pair_jump" {
+  default = "jump-ec2"
 }

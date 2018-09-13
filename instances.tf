@@ -10,6 +10,7 @@ module "ec2_jumpbox" {
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_ssh_jumpbox}"]
   subnet_id                   = "${var.public_subnet_1a}"
   associate_public_ip_address = true
+  key_name                    = "${var.key_pair_jump}"
 
   tags = {
     Terraform = "true"
@@ -28,6 +29,7 @@ module "ec2_frontend" {
   monitoring                  = false
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_icmp}", "${var.allow_ssh}"]
   subnet_id                   = "${var.private_subnet_1a}"
+  key_name                    = "${var.key_pair_jump}"
 
   tags = {
     Terraform = "true"
@@ -46,6 +48,7 @@ module "ec2_backend" {
   monitoring                  = false
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_icmp}", "${var.allow_ssh}"]
   subnet_id                   = "${var.private_subnet_1b}"
+  key_name                    = "${var.key_pair_jump}"
 
   tags = {
     Terraform = "true"
