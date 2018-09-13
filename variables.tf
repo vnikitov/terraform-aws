@@ -11,6 +11,11 @@ variable "instance_type" {
   default = "t2.micro"
 }
 
+variable "ami-centos" {
+  default = "ami-dd3c0f36"
+}
+
+
 
 # VPC
 variable "vpc_01" {
@@ -51,3 +56,4 @@ variable "allow_all_egress" {
 variable "key_pair_jump" {
   default = "jump-ec2"
 }
+

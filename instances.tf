@@ -4,7 +4,7 @@ module "ec2_jumpbox" {
   name           = "jumpbox"
   instance_count = 1
 
-  ami                         = "ami-dd3c0f36"
+  ami                         = "${var.ami-centos}"
   instance_type               = "${var.instance_type}"
   monitoring                  = false
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_ssh_jumpbox}"]
@@ -24,7 +24,7 @@ module "ec2_frontend" {
   name           = "front-end"
   instance_count = 1
 
-  ami                         = "ami-dd3c0f36"
+  ami                         = "${var.ami-centos}"
   instance_type               = "${var.instance_type}"
   monitoring                  = false
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_icmp}", "${var.allow_ssh}"]
@@ -43,7 +43,7 @@ module "ec2_backend" {
   name           = "backend"
   instance_count = 1
 
-  ami                         = "ami-dd3c0f36"
+  ami                         = "${var.ami-centos}"
   instance_type               = "${var.instance_type}"
   monitoring                  = false
   vpc_security_group_ids      = ["${var.allow_all_egress}", "${var.allow_icmp}", "${var.allow_ssh}"]
