@@ -12,7 +12,7 @@ variable "instance_type" {
 }
 
 variable "ami-centos" {
-  default = "ami-dd3c0f36"
+  default = "ami-0f5dbc86dd9cbf7a8"
 }
 
 
